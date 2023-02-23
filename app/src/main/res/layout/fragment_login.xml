@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_sign">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_welcome_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sign_margin_top"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/welcome_back"
+        android:textAlignment="center"
+        android:textColor="@color/sign_tv_color"
+        android:textFontWeight="600"
+        android:textSize="@dimen/sign_tv_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/bg_rectangle_tv"
+        android:cursorVisible="false"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:hint="@string/first_name"
+        android:inputType="textAutoComplete"
+        android:maxLength="30"
+        android:textFontWeight="500"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome_back" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/bg_rectangle_tv"
+        android:cursorVisible="false"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:hint="@string/password"
+        android:maxLines="1"
+        android:textFontWeight="500"
+        android:textSize="11sp"
+        android:textColor="#7B7B7B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_first_name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_visibility_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/eye_off"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="@+id/et_password"
+        app:layout_constraintTop_toTopOf="@+id/et_password" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="99dp"
+        android:background="@drawable/bg_button_main"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/login_btn"
+        android:textColor="@color/white"
+        android:textFontWeight="700"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
