@@ -1,6 +1,8 @@
 package com.example.satri.di.koin
 
-import com.example.satri.ui.main.MainViewModel
+import com.example.satri.domain.room.RepositoryEmployeesImpl
+import com.example.satri.domain.room.RepositoryEmployees
+import com.example.satri.ui.login.LoginViewModels
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.CallAdapter
@@ -24,5 +26,7 @@ val appModuleKoin = module {
     factory<Converter.Factory> { GsonConverterFactory.create() }
     factory<CallAdapter.Factory> { RxJava3CallAdapterFactory.create() }
 
-    viewModel { MainViewModel() }
+    single<RepositoryEmployees> { RepositoryEmployeesImpl() }
+
+    viewModel { LoginViewModels(get()) }
 }

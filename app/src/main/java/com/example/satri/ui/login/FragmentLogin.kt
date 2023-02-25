@@ -3,16 +3,17 @@ package com.example.satri.ui.login
 import android.os.Bundle
 import android.text.InputType
 import android.view.View
-import com.example.satri.R
 import com.example.satri.databinding.FragmentLoginBinding
-import com.example.satri.ui.main.FragmentMain
 import com.example.satri.utils.ViewBindingFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FragmentLogin : ViewBindingFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
     companion object {
         fun newInstance() = FragmentLogin()
     }
+
+    private val viewModel: LoginViewModels by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,11 +41,14 @@ class FragmentLogin : ViewBindingFragment<FragmentLoginBinding>(FragmentLoginBin
 
     private fun startLogin() {
         binding.btnLogin.setOnClickListener {
-            requireActivity().supportFragmentManager
-                .beginTransaction()
-                .add(R.id.main_activity_container, FragmentMain.newInstance())
-                .commit()
+
+            viewModel.onSaveUser(binding.etFirstName.text.toString())
+            println("@@@ ${viewModel.onSaveUser("").toString()}")
+
+//            requireActivity().supportFragmentManager
+//                .beginTransaction()
+//                .replace(R.id.main_activity_container, FragmentProfile.newInstance())
+//                .commit()
         }
     }
-
 }
