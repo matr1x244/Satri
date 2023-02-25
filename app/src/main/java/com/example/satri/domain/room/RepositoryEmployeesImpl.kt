@@ -9,8 +9,7 @@ class RepositoryEmployeesImpl() : RepositoryEmployees {
 
     private fun convertToEntity(employee: String): HistoryEntity {
         return HistoryEntity(
-            0,
-            employee
+            name = employee
         )
     }
 }

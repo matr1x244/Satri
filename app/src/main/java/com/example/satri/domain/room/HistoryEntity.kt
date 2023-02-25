@@ -6,6 +6,6 @@ import java.util.*
 
 @Entity(tableName = "employee_table")
 data class HistoryEntity(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name: String?
 )
