@@ -5,11 +5,11 @@ import androidx.room.*
 @Dao
 interface HistoryDAO {
 
-    @Query("SELECT * FROM employee_table")
+    @Query("SELECT * FROM user_table")
     fun allHistory(): List<HistoryEntity>
 
-    @Query("SELECT * FROM employee_table WHERE name LIKE :name")
-    fun getDataByWord(name: String): List<HistoryEntity>
+    @Query("SELECT * FROM user_table WHERE name LIKE :name AND password LIKE :password")
+    fun getDataByWord(name: String, password: String): List<HistoryEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(entity: HistoryEntity)
@@ -20,10 +20,10 @@ interface HistoryDAO {
     @Delete
     fun delete(entity: HistoryEntity)
 
-    @Query("DELETE FROM employee_table WHERE name = :name")
+    @Query("DELETE FROM user_table WHERE name = :name")
     fun deleteByEmployeeName(name: String?)
 
-    @Query("DELETE FROM employee_table")
+    @Query("DELETE FROM user_table")
     fun deleteAll()
 
 }

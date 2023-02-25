@@ -3,7 +3,9 @@ package com.example.satri.ui.login
 import android.os.Bundle
 import android.text.InputType
 import android.view.View
+import com.example.satri.R
 import com.example.satri.databinding.FragmentLoginBinding
+import com.example.satri.ui.profile.FragmentProfile
 import com.example.satri.utils.ViewBindingFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -42,9 +44,15 @@ class FragmentLogin : ViewBindingFragment<FragmentLoginBinding>(FragmentLoginBin
     private fun startLogin() {
         binding.btnLogin.setOnClickListener {
 
-            viewModel.onSaveUser(binding.etFirstName.text.toString())
-            println("@@@ ${viewModel.onSaveUser("").toString()}")
+//            viewModel.onSaveUser(binding.etFirstName.text.toString(), binding.etPassword.text.toString())
+            viewModel.getUsers()
+            viewModel.onOldUser(binding.etFirstName.text.toString(), binding.etPassword.text.toString())
 
+            viewModel.history.observe(viewLifecycleOwner) {
+                it.forEach {entity ->
+                        println("@@@@ $entity")
+                }
+            }
 //            requireActivity().supportFragmentManager
 //                .beginTransaction()
 //                .replace(R.id.main_activity_container, FragmentProfile.newInstance())

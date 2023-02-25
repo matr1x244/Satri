@@ -7,14 +7,18 @@ import android.widget.Toast
 import com.example.satri.R
 import com.example.satri.databinding.FragmentSigninBinding
 import com.example.satri.ui.login.FragmentLogin
+import com.example.satri.ui.login.LoginViewModels
 import com.example.satri.ui.main.FragmentMain
 import com.example.satri.utils.ViewBindingFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FragmentSignIn : ViewBindingFragment<FragmentSigninBinding>(FragmentSigninBinding::inflate) {
 
     companion object {
         fun newInstance() = FragmentSignIn()
     }
+
+    private val viewModel: LoginViewModels by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,6 +30,7 @@ class FragmentSignIn : ViewBindingFragment<FragmentSigninBinding>(FragmentSignin
     private fun emailVerification() {
         binding.btnSignIn.setOnClickListener {
             if (isValidEmail(binding.etEmail.text.toString())) {
+                viewModel.onSaveUser(binding.etFirstName.text.toString(), binding.etFirstName.text.toString(), binding.etEmail.text.toString())
                 requireActivity().supportFragmentManager
                     .beginTransaction()
                     .add(R.id.main_activity_container, FragmentMain.newInstance())

@@ -19,7 +19,7 @@ abstract class DataBaseEmployee : RoomDatabase() {
     abstract fun employeeDao(): HistoryDAO
 
     companion object {
-        private const val DB_NAME = "add_database.db"
+        private const val DB_NAME = "add_user_new.db"
 
         val db: DataBaseEmployee by lazy {
             Room.databaseBuilder(
