@@ -3,6 +3,7 @@ package com.example.satri.ui.login
 import android.os.Bundle
 import android.text.InputType
 import android.view.View
+import android.widget.Toast
 import com.example.satri.R
 import com.example.satri.databinding.FragmentLoginBinding
 import com.example.satri.ui.profile.FragmentProfile
@@ -43,20 +44,21 @@ class FragmentLogin : ViewBindingFragment<FragmentLoginBinding>(FragmentLoginBin
 
     private fun startLogin() {
         binding.btnLogin.setOnClickListener {
-
-//            viewModel.onSaveUser(binding.etFirstName.text.toString(), binding.etPassword.text.toString())
             viewModel.getUsers()
-            viewModel.onOldUser(binding.etFirstName.text.toString(), binding.etPassword.text.toString())
-
-            viewModel.history.observe(viewLifecycleOwner) {
-                it.forEach {entity ->
-                        println("@@@@ $entity")
+            viewModel.onOldUser(binding.etFirstName.text.toString())
+            viewModel.old.observe(viewLifecycleOwner) {
+                it.forEach { user ->
+                    if (user.name.toString() == binding.etFirstName.text.toString()) {
+                        requireActivity().supportFragmentManager
+                            .beginTransaction()
+                            .replace(R.id.main_activity_container, FragmentProfile.newInstance())
+                            .commit()
+                    }
                 }
             }
-//            requireActivity().supportFragmentManager
-//                .beginTransaction()
-//                .replace(R.id.main_activity_container, FragmentProfile.newInstance())
-//                .commit()
         }
     }
+
 }
+
+

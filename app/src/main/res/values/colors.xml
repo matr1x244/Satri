@@ -7,6 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background_color_sign">@color/white</color>
+    <color name="background_color_sign">#FAF9FF</color>
     <color name="sign_tv_color">#161826</color>
 </resources>

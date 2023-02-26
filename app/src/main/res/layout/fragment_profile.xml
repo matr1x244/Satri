@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background_color_sign">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/arrow_left"
@@ -83,6 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
 
     <LinearLayout
         android:id="@+id/box_trade_store"
@@ -373,13 +375,16 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:id="@+id/menu_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@drawable/bg_menu"
+        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
         app:itemIconSize="15dp"
-        app:itemIconTint="@color/black"
+        app:itemIconTint="@drawable/selector_stock_bottom_nav_view"
         app:itemRippleColor="@color/white"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

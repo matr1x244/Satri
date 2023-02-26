@@ -11,8 +11,12 @@ class RepositoryEmployeesImpl() : RepositoryEmployees {
         ))
     }
 
-    override suspend fun oldUser(firstName: String, password: String) {
-        DataBaseEmployee.db.employeeDao().getDataByWord(name = firstName, password = password)
+    override suspend fun oldUser(firstName: String): List<HistoryEntity> {
+       return DataBaseEmployee.db.employeeDao().getDataByUser(name = firstName)
+    }
+
+    override suspend fun deleteUser() {
+        return DataBaseEmployee.db.employeeDao().deleteAll()
     }
 
     override suspend fun getUser(): List<HistoryEntity> {

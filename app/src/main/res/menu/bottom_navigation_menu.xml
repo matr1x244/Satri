@@ -1,23 +1,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/page_1"
+        android:id="@+id/home_menu"
+        android:icon="@drawable/home_menu"
         android:enabled="true"
-        android:icon="@drawable/log_in" />
+        app:showAsAction="always" />
 
     <item
-        android:id="@+id/page_2"
+        android:id="@+id/like_menu"
+        android:icon="@drawable/like_menu"
         android:enabled="true"
-        android:icon="@drawable/log_in"
-        />
+        app:showAsAction="always" />
     <item
-        android:id="@+id/page_3"
+        android:id="@+id/orders_menu"
+        android:icon="@drawable/orders_menu"
         android:enabled="true"
-        android:checkable="false"
-        android:icon="@drawable/log_in"
-        />
+        app:showAsAction="always" />
+
     <item
-        android:id="@+id/page_4"
+        android:id="@+id/chat_menu"
+        android:icon="@drawable/chat_menu"
         android:enabled="true"
-        android:icon="@drawable/log_in" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/profile_menu"
+        android:icon="@drawable/profile_menu"
+        android:enabled="true"
+        app:showAsAction="always" />
 </menu>

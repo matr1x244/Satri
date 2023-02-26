@@ -8,8 +8,8 @@ interface HistoryDAO {
     @Query("SELECT * FROM user_table")
     fun allHistory(): List<HistoryEntity>
 
-    @Query("SELECT * FROM user_table WHERE name LIKE :name AND password LIKE :password")
-    fun getDataByWord(name: String, password: String): List<HistoryEntity>
+    @Query("SELECT * FROM user_table WHERE name LIKE :name")
+    fun getDataByUser(name: String): List<HistoryEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(entity: HistoryEntity)
@@ -21,7 +21,7 @@ interface HistoryDAO {
     fun delete(entity: HistoryEntity)
 
     @Query("DELETE FROM user_table WHERE name = :name")
-    fun deleteByEmployeeName(name: String?)
+    fun deleteByEmployeeName(name: String)
 
     @Query("DELETE FROM user_table")
     fun deleteAll()

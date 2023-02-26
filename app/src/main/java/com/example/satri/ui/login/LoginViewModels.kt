@@ -14,15 +14,24 @@ class LoginViewModels(private val repository: RepositoryEmployees) : ViewModel()
     private val _history = MutableLiveData<List<HistoryEntity>>()
     val history: LiveData<List<HistoryEntity>> = _history
 
+    private val _old = MutableLiveData<List<HistoryEntity>>()
+    val old: LiveData<List<HistoryEntity>> = _old
+
     fun onSaveUser(firstName: String, lastName: String, email: String) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.saveUser(firstName, lastName, email)
         }
     }
 
-    fun onOldUser(firstName: String, password: String){
+    fun onOldUser(firstName: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.oldUser(firstName, password)
+            _old.postValue(repository.oldUser(firstName))
+        }
+    }
+
+    fun onDeleteUser(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteUser()
         }
     }
 
