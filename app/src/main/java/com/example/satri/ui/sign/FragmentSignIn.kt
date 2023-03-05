@@ -25,12 +25,17 @@ class FragmentSignIn : ViewBindingFragment<FragmentSigninBinding>(FragmentSignin
 
         emailVerification()
         loginIn()
+
     }
 
     private fun emailVerification() {
         binding.btnSignIn.setOnClickListener {
             if (isValidEmail(binding.etEmail.text.toString())) {
-                viewModel.onSaveUser(binding.etFirstName.text.toString(), binding.etFirstName.text.toString(), binding.etEmail.text.toString())
+                viewModel.onSaveUser(
+                    binding.etFirstName.text.toString(),
+                    binding.etFirstName.text.toString(),
+                    binding.etEmail.text.toString()
+                )
                 requireActivity().supportFragmentManager
                     .beginTransaction()
                     .add(R.id.main_activity_container, FragmentMain.newInstance())
@@ -54,6 +59,7 @@ class FragmentSignIn : ViewBindingFragment<FragmentSigninBinding>(FragmentSignin
             requireActivity().supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.main_activity_container, FragmentLogin.newInstance())
+                .addToBackStack(null)
                 .commit()
         }
     }

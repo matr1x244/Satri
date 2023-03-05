@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rv_latest"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginEnd="12dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="114dp"
+        android:layout_height="149dp"
+        app:cardCornerRadius="9dp"
+        app:cardElevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_latest"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_preload"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="46dp"
+                android:background="@drawable/bg_text_latest"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="center"
+                android:lineHeight="9px"
+                android:text="Phones"
+                android:textColor="@color/black_custom"
+                android:textFontWeight="600"
+                android:textSize="6sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_name"
+                android:layout_width="75dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="top"
+                android:lineHeight="9px"
+                android:lineSpacingExtra="3dp"
+                android:text="Samsung S10"
+                android:textColor="@color/white"
+                android:textFontWeight="600"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_category"
+                app:layout_constraintTop_toBottomOf="@+id/tv_category" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_price"
+                android:layout_width="40dp"
+                android:layout_height="9dp"
+                android:layout_marginTop="1dp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="bottom"
+                android:lineHeight="10.5px"
+                android:text="$ 180,000"
+                android:textColor="@color/white"
+                android:textFontWeight="600"
+                android:textSize="7sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/tv_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/bg_category"
+                android:src="@drawable/plus"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_latest"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

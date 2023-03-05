@@ -53,12 +53,17 @@ class FragmentLogin : ViewBindingFragment<FragmentLoginBinding>(FragmentLoginBin
                             .beginTransaction()
                             .replace(R.id.main_activity_container, FragmentProfile.newInstance())
                             .commit()
+                    } else {
+                        Toast.makeText(requireActivity(), "....", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
 }
 
 

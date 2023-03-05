@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background_color_sign">#FAF9FF</color>
     <color name="sign_tv_color">#161826</color>
+    <color name="blue_main_text">#4E55D7</color>
+    <color name="black_custom">#040402</color>
 </resources>

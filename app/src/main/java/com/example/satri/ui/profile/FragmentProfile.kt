@@ -5,16 +5,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.example.satri.R
 import com.example.satri.databinding.FragmentProfileBinding
 import com.example.satri.ui.login.LoginViewModels
+import com.example.satri.ui.main.FragmentMain
 import com.example.satri.ui.sign.FragmentSignIn
 import com.example.satri.utils.ViewBindingFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.coroutines.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -44,8 +43,13 @@ class FragmentProfile :
         val bottomNavigationView = binding.menuBottom
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.home_menu -> Toast.makeText(requireActivity(), "1", Toast.LENGTH_SHORT).show()
-                R.id.chat_menu -> Toast.makeText(requireActivity(), "2", Toast.LENGTH_SHORT).show()
+                R.id.home_menu -> {
+                    requireActivity().supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.main_activity_container, FragmentMain.newInstance())
+                        .addToBackStack(null)
+                        .commit()
+                }
             }
             true
         }

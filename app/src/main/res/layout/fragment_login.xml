@@ -50,9 +50,9 @@
         android:gravity="center"
         android:hint="@string/password"
         android:maxLines="1"
+        android:textColor="#7B7B7B"
         android:textFontWeight="500"
         android:textSize="11sp"
-        android:textColor="#7B7B7B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_first_name" />
@@ -61,8 +61,8 @@
         android:id="@+id/btn_visibility_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/eye_off"
         android:layout_marginEnd="15dp"
+        android:src="@drawable/eye_off"
         app:layout_constraintBottom_toBottomOf="@+id/et_password"
         app:layout_constraintEnd_toEndOf="@+id/et_password"
         app:layout_constraintTop_toTopOf="@+id/et_password" />

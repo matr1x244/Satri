@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:background="@drawable/bg_rectangle_tv"
+        android:cursorVisible="false"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:hint="@string/first_name"
@@ -34,7 +35,6 @@
         android:maxLength="30"
         android:textFontWeight="500"
         android:textSize="11sp"
-        android:cursorVisible="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_signIn" />
@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:background="@drawable/bg_rectangle_tv"
+        android:cursorVisible="false"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:hint="@string/last_name"
@@ -52,7 +53,6 @@
         android:maxLength="30"
         android:textFontWeight="500"
         android:textSize="11sp"
-        android:cursorVisible="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_first_name" />
@@ -63,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:background="@drawable/bg_rectangle_tv"
+        android:cursorVisible="false"
         android:fontFamily="@font/montserrat"
         android:gravity="center"
         android:hint="@string/email"
@@ -70,7 +71,6 @@
         android:maxLines="1"
         android:textFontWeight="500"
         android:textSize="11sp"
-        android:cursorVisible="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_last_name" />
