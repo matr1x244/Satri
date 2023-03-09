@@ -7,6 +7,7 @@ import android.provider.MediaStore
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.widget.doAfterTextChanged
 import com.bumptech.glide.Glide
 import com.example.satri.R
 import com.example.satri.databinding.FragmentProfileBinding
@@ -16,6 +17,7 @@ import com.example.satri.ui.sign.FragmentSignIn
 import com.example.satri.utils.ViewBindingFragment
 import kotlinx.coroutines.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
 class FragmentProfile :
     ViewBindingFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
@@ -24,7 +26,7 @@ class FragmentProfile :
         fun newInstance() = FragmentProfile()
     }
 
-    private val viewModel: LoginViewModels by viewModel()
+    private val viewModel: LoginViewModels by viewModel(named("login_view_model"))
     private val job = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + job)
     private lateinit var intent: Intent

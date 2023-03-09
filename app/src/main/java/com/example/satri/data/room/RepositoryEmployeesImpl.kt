@@ -1,14 +1,16 @@
-package com.example.satri.domain.room
+package com.example.satri.data.room
 
 class RepositoryEmployeesImpl() : RepositoryEmployees {
 
     override suspend fun saveUser(firstName: String, lastName: String, email: String) {
-        DataBaseEmployee.db.employeeDao().insert(HistoryEntity(
+        DataBaseEmployee.db.employeeDao().insert(
+            HistoryEntity(
             name = firstName,
             last_name = lastName,
             email = email,
             password = null
-        ))
+        )
+        )
     }
 
     override suspend fun oldUser(firstName: String): List<HistoryEntity> {

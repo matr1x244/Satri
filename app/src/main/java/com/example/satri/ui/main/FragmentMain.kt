@@ -15,6 +15,7 @@ import com.example.satri.ui.main.rv_latest.AdaptersLatest
 import com.example.satri.ui.main.rv_sale.AdaptersSale
 import com.example.satri.utils.ViewBindingFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
 class FragmentMain : ViewBindingFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
 
@@ -22,7 +23,7 @@ class FragmentMain : ViewBindingFragment<FragmentMainBinding>(FragmentMainBindin
         fun newInstance() = FragmentMain()
     }
 
-    private val viewModel: MainViewModel by viewModel()
+    private val viewModel: MainViewModel by viewModel(named("main_view_model"))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

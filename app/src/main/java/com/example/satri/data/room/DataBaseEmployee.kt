@@ -1,4 +1,4 @@
-package com.example.satri.domain.room
+package com.example.satri.data.room
 
 import androidx.room.Room
 import androidx.room.RoomDatabase

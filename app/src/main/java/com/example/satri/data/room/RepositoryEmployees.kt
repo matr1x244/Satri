@@ -1,4 +1,4 @@
-package com.example.satri.domain.room
+package com.example.satri.data.room
 
 interface RepositoryEmployees {
 
@@ -7,7 +7,6 @@ interface RepositoryEmployees {
     suspend fun oldUser(firstName: String): List<HistoryEntity>
 
     suspend fun deleteUser()
-
 
     suspend fun getUser(): List<HistoryEntity>
 

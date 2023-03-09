@@ -11,6 +11,7 @@ import com.example.satri.ui.login.LoginViewModels
 import com.example.satri.ui.main.FragmentMain
 import com.example.satri.utils.ViewBindingFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
 class FragmentSignIn : ViewBindingFragment<FragmentSigninBinding>(FragmentSigninBinding::inflate) {
 
@@ -18,7 +19,7 @@ class FragmentSignIn : ViewBindingFragment<FragmentSigninBinding>(FragmentSignin
         fun newInstance() = FragmentSignIn()
     }
 
-    private val viewModel: LoginViewModels by viewModel()
+    private val viewModel: LoginViewModels by viewModel(named("login_view_model"))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

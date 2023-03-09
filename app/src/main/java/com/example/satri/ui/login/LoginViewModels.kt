@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.satri.domain.room.HistoryEntity
-import com.example.satri.domain.room.RepositoryEmployees
+import com.example.satri.data.room.HistoryEntity
+import com.example.satri.data.room.RepositoryEmployees
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

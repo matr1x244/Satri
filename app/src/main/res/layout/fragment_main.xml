@@ -62,6 +62,7 @@
         android:gravity="center"
         android:hint="What are you looking for ?"
         android:textSize="9sp"
+        android:drawableEnd="@drawable/bg_sale"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_trade_by_bata" />
