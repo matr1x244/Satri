@@ -13,18 +13,12 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        appInstance = this
 
         startKoin {
             androidLogger()
             androidContext(this@App)
             modules(mainModuleKoin,loginKoinModule)
         }
-    }
-
-    companion object {
-        @SuppressLint("StaticFieldLeak")
-        lateinit var appInstance: Context
     }
 
 }

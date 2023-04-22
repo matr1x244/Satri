@@ -1,9 +1,9 @@
 package com.example.satri.data.room
 
-class RepositoryEmployeesImpl() : RepositoryEmployees {
+class RepositoryEmployeesImpl(private val database: DataBaseEmployee) : RepositoryEmployees {
 
     override suspend fun saveUser(firstName: String, lastName: String, email: String) {
-        DataBaseEmployee.db.employeeDao().insert(
+       database.employeeDao().insert(
             HistoryEntity(
             name = firstName,
             last_name = lastName,
@@ -14,14 +14,14 @@ class RepositoryEmployeesImpl() : RepositoryEmployees {
     }
 
     override suspend fun oldUser(firstName: String): List<HistoryEntity> {
-       return DataBaseEmployee.db.employeeDao().getDataByUser(name = firstName)
+       return database.employeeDao().getDataByUser(name = firstName)
     }
 
     override suspend fun deleteUser() {
-        return DataBaseEmployee.db.employeeDao().deleteAll()
+        return database.employeeDao().deleteAll()
     }
 
     override suspend fun getUser(): List<HistoryEntity> {
-        return DataBaseEmployee.db.employeeDao().allHistory()
+        return database.employeeDao().allHistory()
     }
 }

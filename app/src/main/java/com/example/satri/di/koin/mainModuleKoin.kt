@@ -40,7 +40,8 @@ val mainModuleKoin = module {
         MainViewModel(
             get(named("local_category")),
             get(named("api_latest")),
-            get(named("api_sale")
+            get(
+                named("api_sale")
             )
         )
     }
